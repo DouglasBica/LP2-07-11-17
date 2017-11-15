@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="  https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+	$("button").click(function(){
+		$.get("/clientes", function(data, status){
+			var nome = data[0].nome;
+			var telefone = data[0].telefone;
+			var email = data[0].email;
+			$("#resultado").text("NOME: " + nome + " | Telefone: " + telefone + " | Email: " + email);
+		});
+	});
+});
+</script>
+</head>
+<body>
+
+<button> Buscar cliente </button>
+<h1 id="resultado"></h1>
+
+</body>
+</html>
